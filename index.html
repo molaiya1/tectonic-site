@@ -501,6 +501,101 @@
     max-width: 440px;
   }
 
+  /* ── VIDEO TREATMENT (shared) ───────────────────────── */
+  @keyframes slowZoom {
+    0%   { transform: scale(1.00); }
+    100% { transform: scale(1.07); }
+  }
+
+  /* Cinematic video filter: desaturated, boosted contrast, warm highlights */
+  .vid-el {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.65) contrast(1.18) brightness(0.42);
+    animation: slowZoom 14s ease-in-out infinite alternate;
+  }
+
+  /* ── VIDEO STRIP (atmospheric transition) ───────────── */
+  .vid-strip {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .vid-strip-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(11,13,15,0.70) 0%,
+      rgba(11,13,15,0.45) 50%,
+      rgba(11,13,15,0.70) 100%
+    );
+    z-index: 1;
+  }
+  /* Thin gold rule lines top and bottom of strip */
+  .vid-strip::before, .vid-strip::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212,160,23,0.30), transparent);
+    z-index: 2;
+  }
+  .vid-strip::before { top: 0; }
+  .vid-strip::after  { bottom: 0; }
+
+  /* ── CTA VIDEO UPGRADE ──────────────────────────────── */
+  .cta-vid-panel {
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .cta-vid-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(11,13,15,0.70) 0%,
+      rgba(11,13,15,0.40) 100%
+    );
+    z-index: 1;
+  }
+  .cta-trust {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 40px 36px;
+    gap: 10px;
+  }
+  .cta-trust-line {
+    font-family: var(--head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cta-trust-line::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
   /* ── DEVELOPMENT FOCUS ──────────────────────────────── */
   .devfocus {
     background: var(--charcoal);
@@ -808,6 +903,7 @@
     .metric:nth-last-child(-n+2) { border-bottom: none; }
     .cta-wrap { grid-template-columns: 1fr; }
     .cta-img { display: none; }
+    .cta-vid-panel { display: none; }
     .cta-body { border-left: none; }
     .ft-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
     .ft-brand { grid-column: 1 / -1; }
@@ -953,6 +1049,24 @@
 </section>
 
 
+<!-- ══ VIDEO STRIP (atmospheric transition) ══════════════════════════ -->
+<!--
+  VIDEO STRIP: Drop the real estate video src below to activate.
+  This strip plays silently between Mission and Approach.
+  Purpose: atmospheric proof-of-work, not personal brand.
+  VIDEO PATH: update src once file is in /assets/
+-->
+<div class="vid-strip" aria-hidden="true">
+  <video class="vid-el" autoplay muted loop playsinline preload="auto">
+    <!-- Replace src with your actual video file once uploaded to /assets/ -->
+    <!-- <source src="/assets/tectonic-reel.mp4" type="video/mp4"> -->
+  </video>
+  <!-- Fallback bg if video src is empty -->
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=40');background-size:cover;background-position:center;filter:saturate(0.5) brightness(0.35);"></div>
+  <div class="vid-strip-overlay"></div>
+</div>
+
+
 <!-- ══ APPROACH (PROCESS TIMELINE) ══════════════════════════════════ -->
 <section class="approach" id="approach">
   <div class="container approach-inner">
@@ -1003,20 +1117,21 @@
 <section class="founder">
   <div class="founder-grid">
 
-    <!-- Left: Video/image panel — drop real video src below when available -->
-    <div class="founder-media">
-      <!--
-        VIDEO INTEGRATION:
-        When ready, add your video file path to the <source> below.
-        Video should be: muted, autoplay, loop, no controls, dark overlay.
-        Example: <source src="/assets/tectonic-reel.mp4" type="video/mp4">
-      -->
-      <!--
-      <video autoplay muted loop playsinline>
+    <!-- Left: Video panel — cinematic, muted, dark-treated -->
+    <!--
+      TO ACTIVATE VIDEO: replace the src path below with your real estate video file.
+      Upload your video file to /Users/mike/tectonic-site/assets/ and update:
         <source src="/assets/tectonic-reel.mp4" type="video/mp4">
+      The fallback image below shows until video is available.
+    -->
+    <div class="founder-media">
+      <video class="vid-el" autoplay muted loop playsinline preload="auto"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <!-- DROP YOUR VIDEO FILE PATH HERE when ready -->
+        <!-- <source src="/assets/tectonic-reel.mp4" type="video/mp4"> -->
       </video>
-      -->
-      <div class="founder-media-img"></div>
+      <!-- Fallback still image (shows when video src is empty or video fails) -->
+      <div class="founder-media-img" id="founderFallback"></div>
       <div class="founder-shade"></div>
       <div class="founder-caption">
         <div class="founder-caption-rule"></div>
@@ -1191,14 +1306,35 @@
 
 
 <!-- ══ FINAL CTA ═════════════════════════════════════════════════════ -->
+<!--
+  CTA VIDEO: When your video is ready, uncomment the <video> below
+  and remove or hide the fallback <img> behind it.
+  The trust overlay phrases appear on top regardless.
+-->
 <section class="cta" id="contact">
   <div class="cta-wrap">
-    <div class="cta-img">
-      <img
+
+    <!-- Left: Video panel with trust overlay -->
+    <div class="cta-vid-panel">
+      <video class="vid-el" autoplay muted loop playsinline preload="auto">
+        <!-- DROP YOUR VIDEO FILE PATH HERE when ready -->
+        <!-- <source src="/assets/tectonic-reel.mp4" type="video/mp4"> -->
+      </video>
+      <!-- Fallback image shows when video src is empty -->
+      <img id="ctaFallback"
         src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80"
-        alt="Development planning environment"
+        alt="Development environment"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.6) contrast(1.1) brightness(0.42);"
         loading="lazy"/>
+      <div class="cta-vid-shade"></div>
+      <!-- Trust phrases — appear on top of video/image -->
+      <div class="cta-trust">
+        <div class="cta-trust-line">Real experience.</div>
+        <div class="cta-trust-line">Thoughtful development.</div>
+        <div class="cta-trust-line">Lasting impact.</div>
+      </div>
     </div>
+
     <div class="cta-body">
       <div class="label">Get Started</div>
       <h2 class="cta-title">Let's Build What's Next.</h2>
@@ -1278,6 +1414,20 @@
   function toggleMenu() {
     document.getElementById('mmenu').classList.toggle('open');
   }
+
+  // Video fallback: hide static image if video actually plays
+  document.querySelectorAll('video').forEach(function(v) {
+    v.addEventListener('playing', function() {
+      var sib = v.nextElementSibling;
+      while (sib) {
+        if (sib.id === 'founderFallback' || sib.id === 'ctaFallback') {
+          sib.style.display = 'none';
+          break;
+        }
+        sib = sib.nextElementSibling;
+      }
+    });
+  });
   document.addEventListener('click', function(e) {
     const m = document.getElementById('mmenu');
     const h = document.querySelector('.hbg');
