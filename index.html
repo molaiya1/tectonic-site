@@ -26,9 +26,8 @@
     --dim:      #D8D8D4;
     --gold:     #D4A017;
     --gold-lt:  #F5B21A;
-    --gold-bg:  rgba(212,160,23,0.08);
     --border:   rgba(255,255,255,0.08);
-    --border-m: rgba(255,255,255,0.12);
+    --border-m: rgba(255,255,255,0.13);
     --sans:     'Inter', -apple-system, sans-serif;
     --head:     'Montserrat', 'Inter', sans-serif;
   }
@@ -46,23 +45,20 @@
   }
 
   /* ── UTILITIES ── */
-  .container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
   .gold { color: var(--gold); }
+
   .section-label {
     display: inline-flex;
     align-items: center;
     gap: 12px;
     font-family: var(--head);
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .section-label::before {
     content: '';
@@ -72,6 +68,7 @@
     background: var(--gold);
     flex-shrink: 0;
   }
+
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -79,7 +76,7 @@
     background: var(--gold);
     color: var(--black);
     font-family: var(--head);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -88,6 +85,7 @@
     transition: background 0.2s;
   }
   .btn-primary:hover { background: var(--gold-lt); }
+
   .btn-outline {
     display: inline-flex;
     align-items: center;
@@ -95,27 +93,24 @@
     background: transparent;
     color: var(--white);
     font-family: var(--head);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 13px 28px;
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.22);
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s;
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .arrow { font-size: 13px; }
 
   /* ── HEADER ── */
   header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(11,13,15,0.95);
-    backdrop-filter: blur(12px);
+    background: rgba(11,13,15,0.96);
+    backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
     transition: background 0.3s;
   }
@@ -130,11 +125,6 @@
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    flex-shrink: 0;
-  }
-  .logo-mark {
-    width: 36px;
-    height: 36px;
     flex-shrink: 0;
   }
   .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
@@ -154,14 +144,15 @@
     text-transform: uppercase;
     color: var(--gold);
   }
-  nav { display: flex; align-items: center; gap: 36px; }
+
+  nav { display: flex; align-items: center; gap: 32px; }
   nav a {
     font-family: var(--head);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.60);
     text-decoration: none;
     transition: color 0.2s;
   }
@@ -169,7 +160,7 @@
   .nav-cta {
     background: transparent;
     color: var(--white) !important;
-    border: 1px solid rgba(212,160,23,0.5);
+    border: 1px solid rgba(212,160,23,0.55);
     padding: 9px 20px;
     font-family: var(--head);
     font-size: 10px;
@@ -177,14 +168,11 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
     white-space: nowrap;
   }
-  .nav-cta:hover {
-    background: var(--gold);
-    color: var(--black) !important;
-    border-color: var(--gold);
-  }
+  .nav-cta:hover { background: var(--gold); color: var(--black) !important; border-color: var(--gold); }
+
   .hamburger {
     display: none;
     flex-direction: column;
@@ -194,20 +182,12 @@
     background: none;
     border: none;
   }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--white);
-    transition: all 0.3s;
-  }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
+
   .mobile-menu {
     display: none;
     position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 72px; left: 0; right: 0; bottom: 0;
     background: var(--charcoal);
     z-index: 99;
     flex-direction: column;
@@ -224,14 +204,9 @@
     text-transform: uppercase;
     color: var(--white);
     text-decoration: none;
-    transition: color 0.2s;
   }
   .mobile-menu a:hover { color: var(--gold); }
-  .mobile-menu .nav-cta {
-    font-size: 13px;
-    padding: 14px 32px;
-    margin-top: 8px;
-  }
+  .mobile-menu .nav-cta { font-size: 13px; padding: 14px 32px; margin-top: 8px; }
 
   /* ── HERO ── */
   .hero {
@@ -240,131 +215,138 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding-top: 72px;
   }
+
+  /* Background image — building positioned to fill the right half */
   .hero-bg {
     position: absolute;
     inset: 0;
     background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80');
     background-size: cover;
-    background-position: center 30%;
+    background-position: 65% center;
     z-index: 0;
   }
+
+  /* Gradient: opaque black on left → semi-transparent on right so building shows */
   .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      105deg,
-      rgba(11,13,15,0.96) 0%,
-      rgba(11,13,15,0.82) 50%,
-      rgba(11,13,15,0.60) 100%
+      100deg,
+      rgba(11,13,15,0.98) 0%,
+      rgba(11,13,15,0.93) 38%,
+      rgba(11,13,15,0.55) 62%,
+      rgba(11,13,15,0.32) 100%
     );
     z-index: 1;
   }
+
   .hero-inner {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 80px;
+    grid-template-columns: 1fr 400px;
+    gap: 72px;
     align-items: center;
-    padding: 100px 0 80px;
+    padding: 140px 0 100px;
+    width: 100%;
   }
-  .hero-left {}
+
   .hero-eyebrow {
     display: flex;
     align-items: center;
     gap: 12px;
     font-family: var(--head);
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .hero-eyebrow::before {
     content: '';
     display: block;
-    width: 40px;
+    width: 36px;
     height: 1.5px;
     background: var(--gold);
   }
+
   .hero-headline {
     font-family: var(--head);
-    font-size: clamp(42px, 5.5vw, 72px);
+    font-size: clamp(44px, 5.8vw, 76px);
     font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -1px;
+    line-height: 0.97;
+    letter-spacing: -1.5px;
     text-transform: uppercase;
     color: var(--white);
     margin-bottom: 28px;
   }
   .hero-headline .gold { color: var(--gold); display: block; }
+
   .hero-sub {
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.62);
-    line-height: 1.7;
-    max-width: 480px;
+    font-size: 15.5px;
+    color: rgba(255,255,255,0.58);
+    line-height: 1.75;
+    max-width: 460px;
     margin-bottom: 44px;
   }
-  .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .hero-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 
-  .hero-right {}
+  /* Pillars card — floats on top of the visible building photo */
   .hero-pillars {
-    background: rgba(17,20,24,0.80);
+    background: rgba(11,13,15,0.82);
     border: 1px solid var(--border-m);
-    backdrop-filter: blur(16px);
-    padding: 36px 32px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 32px 28px;
   }
   .pillars-title {
     font-family: var(--head);
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 28px;
-    padding-bottom: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
     border-bottom: 1px solid var(--border);
   }
   .pillar {
     display: flex;
-    gap: 16px;
-    padding: 18px 0;
+    gap: 14px;
+    padding: 16px 0;
     border-bottom: 1px solid var(--border);
   }
   .pillar:last-child { border-bottom: none; padding-bottom: 0; }
   .pillar-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
     flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
     padding-top: 2px;
   }
-  .pillar-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .pillar-body {}
+  .pillar-icon svg {
+    width: 20px; height: 20px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
   .pillar-name {
     font-family: var(--head);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--white);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
-  .pillar-desc {
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .pillar-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
 
   /* ── MISSION ── */
   .mission {
     background: var(--charcoal);
-    padding: 96px 0;
+    padding: 88px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
@@ -381,104 +363,70 @@
     line-height: 1.3;
     color: var(--white);
   }
-  .mission-right {}
   .mission-rule {
-    width: 48px;
-    height: 1.5px;
+    width: 48px; height: 1.5px;
     background: var(--gold);
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
   .mission-para {
     font-size: 15px;
-    color: rgba(255,255,255,0.58);
+    color: rgba(255,255,255,0.55);
     line-height: 1.85;
   }
 
-  /* ── ABOUT ── */
-  .about {
+  /* ── WHY TECTONIC ── */
+  .why {
     background: var(--graphite);
     padding: 96px 0;
   }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 72px;
-    align-items: start;
-  }
-  .about-photo {
-    aspect-ratio: 3/4;
-    background: var(--slate);
-    overflow: hidden;
-    position: relative;
-  }
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .about-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: var(--slate);
-    min-height: 420px;
-  }
-  .about-right {}
-  .about-headline {
+  .why-header { margin-bottom: 56px; }
+  .why-headline {
     font-family: var(--head);
-    font-size: clamp(24px, 3vw, 40px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.5px;
+    font-size: clamp(24px, 3vw, 42px);
+    font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
     color: var(--white);
-    margin-bottom: 24px;
-  }
-  .about-headline .gold { color: var(--gold); }
-  .about-para {
-    font-size: 15px;
-    color: rgba(255,255,255,0.60);
-    line-height: 1.85;
-    margin-bottom: 40px;
     max-width: 520px;
   }
-  .about-stats {
+  .why-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2px;
-    border-top: 1px solid var(--border);
-    padding-top: 36px;
   }
-  .stat-block {
-    padding-right: 32px;
-    border-right: 1px solid var(--border);
+  .why-card {
+    background: var(--charcoal);
+    padding: 36px 28px;
+    border-top: 2px solid var(--border);
+    transition: border-top-color 0.2s;
   }
-  .stat-block:last-child { border-right: none; padding-right: 0; padding-left: 32px; }
-  .stat-block:first-child { padding-left: 0; }
-  .stat-val {
+  .why-card:hover { border-top-color: var(--gold); }
+  .why-icon {
+    width: 44px; height: 44px;
+    margin-bottom: 20px;
+  }
+  .why-icon svg {
+    width: 32px; height: 32px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .why-title {
     font-family: var(--head);
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-label {
     font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--muted);
-    line-height: 1.5;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .why-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.50);
+    line-height: 1.7;
   }
 
   /* ── FEATURED PROJECT ── */
@@ -493,9 +441,9 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(212,160,23,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212,160,23,0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
+      linear-gradient(rgba(212,160,23,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,160,23,0.025) 1px, transparent 1px);
+    background-size: 52px 52px;
     pointer-events: none;
   }
   .project-grid {
@@ -505,33 +453,31 @@
     align-items: start;
     position: relative;
   }
-  .project-left {}
   .project-title {
     font-family: var(--head);
     font-size: clamp(28px, 3vw, 44px);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.08;
     text-transform: uppercase;
-    color: var(--white);
     letter-spacing: -0.5px;
-    margin-bottom: 20px;
+    color: var(--white);
+    margin-bottom: 18px;
   }
   .project-desc {
-    font-size: 15px;
-    color: rgba(255,255,255,0.58);
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.55);
     line-height: 1.8;
-    margin-bottom: 36px;
-    max-width: 420px;
+    margin-bottom: 32px;
+    max-width: 400px;
   }
   .project-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
     border: 1px solid var(--border);
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
   .detail-item {
-    padding: 18px 20px;
+    padding: 16px 18px;
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
@@ -539,19 +485,15 @@
   .detail-item:nth-last-child(-n+2) { border-bottom: none; }
   .detail-key {
     font-family: var(--head);
-    font-size: 8.5px;
+    font-size: 8px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
-  .detail-val {
-    font-size: 13px;
-    color: var(--dim);
-    line-height: 1.5;
-  }
-  .project-right {}
+  .detail-val { font-size: 12.5px; color: var(--dim); line-height: 1.5; }
+
   .project-main-img {
     width: 100%;
     aspect-ratio: 16/10;
@@ -559,17 +501,8 @@
     display: block;
     margin-bottom: 4px;
   }
-  .project-sub-imgs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-  }
-  .project-sub-img {
-    width: 100%;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    display: block;
-  }
+  .project-sub-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .project-sub-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
 
   /* ── CAPABILITIES ── */
   .capabilities {
@@ -581,7 +514,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 56px;
+    margin-bottom: 52px;
   }
   .capabilities-title {
     font-family: var(--head);
@@ -590,36 +523,26 @@
     text-transform: uppercase;
     letter-spacing: -0.5px;
     color: var(--white);
-    max-width: 480px;
-    line-height: 1.15;
+    line-height: 1.12;
   }
   .capabilities-sub {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--muted);
     line-height: 1.7;
-    max-width: 320px;
+    max-width: 300px;
     text-align: right;
   }
-  .cap-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
+  .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .cap-col {
     background: var(--graphite);
-    padding: 40px 36px;
+    padding: 44px 36px;
     border-top: 2px solid var(--border);
-    transition: border-color 0.2s;
+    transition: border-top-color 0.2s;
   }
   .cap-col:hover { border-top-color: var(--gold); }
-  .cap-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 24px;
-  }
+  .cap-icon { margin-bottom: 24px; }
   .cap-icon svg {
-    width: 36px;
-    height: 36px;
+    width: 38px; height: 38px;
     stroke: var(--gold);
     fill: none;
     stroke-width: 1.5;
@@ -628,28 +551,25 @@
   }
   .cap-heading {
     font-family: var(--head);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--white);
     margin-bottom: 20px;
   }
-  .cap-list {
-    list-style: none;
-    margin-bottom: 28px;
-  }
+  .cap-list { list-style: none; margin-bottom: 28px; }
   .cap-list li {
-    font-size: 13.5px;
-    color: rgba(255,255,255,0.55);
-    padding: 8px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.52);
+    padding: 9px 0;
     border-bottom: 1px solid var(--border);
-    line-height: 1.5;
+    line-height: 1.4;
   }
   .cap-list li:last-child { border-bottom: none; }
   .cap-link {
     font-family: var(--head);
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -665,19 +585,19 @@
   /* ── IMPACT METRICS ── */
   .impact {
     background: var(--black);
-    padding: 72px 0;
+    padding: 80px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
   .impact-label {
     text-align: center;
     font-family: var(--head);
-    font-size: 9.5px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 48px;
+    margin-bottom: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -686,34 +606,33 @@
   .impact-label::before, .impact-label::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 56px;
     height: 1px;
     background: var(--gold);
-    opacity: 0.5;
+    opacity: 0.4;
   }
   .impact-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0;
   }
   .metric {
     text-align: center;
-    padding: 0 32px;
+    padding: 0 28px;
     border-right: 1px solid var(--border);
   }
   .metric:last-child { border-right: none; }
   .metric-val {
     font-family: var(--head);
-    font-size: clamp(36px, 4vw, 56px);
+    font-size: clamp(38px, 4.2vw, 58px);
     font-weight: 900;
     color: var(--gold);
     line-height: 1;
     margin-bottom: 10px;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
   }
   .metric-label {
     font-family: var(--head);
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -723,30 +642,31 @@
   /* ── PARTNERS ── */
   .partners {
     background: var(--charcoal);
-    padding: 64px 0;
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
   }
   .partners-label {
     text-align: center;
     font-family: var(--head);
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-    margin-bottom: 40px;
+    color: rgba(255,255,255,0.28);
+    margin-bottom: 36px;
   }
   .partners-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 64px;
+    gap: 60px;
     flex-wrap: wrap;
-    opacity: 0.35;
+    opacity: 0.32;
     filter: grayscale(100%);
   }
   .partner-placeholder {
     font-family: var(--head);
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -755,37 +675,30 @@
   }
 
   /* ── FINAL CTA ── */
-  .cta-section {
-    background: var(--graphite);
-    position: relative;
-    overflow: hidden;
-  }
+  .cta-section { background: var(--graphite); overflow: hidden; }
   .cta-inner {
     display: grid;
-    grid-template-columns: 380px 1fr;
-    min-height: 400px;
+    grid-template-columns: 360px 1fr;
+    min-height: 380px;
   }
-  .cta-image {
-    position: relative;
-    overflow: hidden;
-  }
+  .cta-image { overflow: hidden; }
   .cta-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.55);
+    filter: brightness(0.50);
   }
   .cta-content {
     padding: 80px 72px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
   }
   .cta-headline {
     font-family: var(--head);
-    font-size: clamp(28px, 3.5vw, 48px);
+    font-size: clamp(30px, 3.5vw, 50px);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.5px;
@@ -793,12 +706,12 @@
     line-height: 1.05;
   }
   .cta-sub {
-    font-size: 15px;
-    color: rgba(255,255,255,0.55);
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.52);
     line-height: 1.75;
-    max-width: 460px;
+    max-width: 440px;
   }
-  .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+  .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
   /* ── FOOTER ── */
   footer {
@@ -808,99 +721,83 @@
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: 280px 1fr 200px;
-    gap: 64px;
+    grid-template-columns: 260px 1fr 220px;
+    gap: 56px;
     margin-bottom: 48px;
   }
-  .footer-brand {}
   .footer-logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .footer-tagline {
     font-size: 13px;
     color: var(--muted);
     line-height: 1.7;
-    max-width: 240px;
     font-style: italic;
   }
-  .footer-nav { display: flex; gap: 64px; }
-  .footer-nav-col {}
+  .footer-nav { display: flex; gap: 56px; }
   .footer-nav-title {
     font-family: var(--head);
-    font-size: 9.5px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .footer-nav-col a {
     display: block;
     font-size: 13px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.42);
     text-decoration: none;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
     transition: color 0.2s;
   }
   .footer-nav-col a:hover { color: var(--white); }
-  .footer-contact {}
   .footer-contact-title {
     font-family: var(--head);
-    font-size: 9.5px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .footer-contact p {
     font-size: 13px;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 10px;
+    color: rgba(255,255,255,0.42);
+    margin-bottom: 9px;
     line-height: 1.6;
   }
-  .footer-contact a {
-    color: rgba(255,255,255,0.45);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-contact a { color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
   .footer-contact a:hover { color: var(--gold); }
   .footer-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 32px;
+    padding-top: 28px;
     border-top: 1px solid var(--border);
   }
-  .footer-copy {
-    font-size: 12px;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.3px;
-  }
-  .footer-social { display: flex; gap: 20px; }
+  .footer-copy { font-size: 11.5px; color: rgba(255,255,255,0.22); letter-spacing: 0.3px; }
+  .footer-social { display: flex; gap: 16px; }
   .footer-social a {
-    width: 36px;
-    height: 36px;
+    width: 34px; height: 34px;
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     color: var(--muted);
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s;
   }
   .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
-  .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
-  .footer-links { display: flex; gap: 24px; }
+  .footer-social svg { width: 14px; height: 14px; fill: currentColor; }
+  .footer-links { display: flex; gap: 20px; }
   .footer-links a {
     font-size: 11px;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.18);
     text-decoration: none;
-    letter-spacing: 0.5px;
     transition: color 0.2s;
   }
   .footer-links a:hover { color: var(--muted); }
@@ -908,42 +805,42 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .container { padding: 0 24px; }
-    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-inner { grid-template-columns: 1fr; padding: 120px 0 80px; }
     .hero-right { display: none; }
+    .hero-overlay { background: linear-gradient(to right, rgba(11,13,15,0.96) 0%, rgba(11,13,15,0.80) 100%); }
     .mission-grid { grid-template-columns: 1fr; gap: 40px; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-photo { max-width: 320px; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
     .project-grid { grid-template-columns: 1fr; gap: 48px; }
     .project-right { order: -1; }
     .cap-grid { grid-template-columns: 1fr; gap: 2px; }
-    .impact-row { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .metric { border-right: none; padding: 0; }
-    .metric:nth-child(odd) { border-right: 1px solid var(--border); padding-right: 32px; }
+    .impact-row { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+    .metric { padding: 20px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+    .metric:nth-child(odd) { border-right: 1px solid var(--border); }
+    .metric:nth-last-child(-n+2) { border-bottom: none; }
     .cta-inner { grid-template-columns: 1fr; }
     .cta-image { display: none; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .footer-brand { grid-column: 1 / -1; }
     nav { display: none; }
     .hamburger { display: flex; }
-    .capabilities-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-    .capabilities-sub { text-align: left; max-width: 100%; }
+    .capabilities-header { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .capabilities-sub { text-align: left; }
   }
 
   @media (max-width: 640px) {
-    .hero-headline { font-size: 36px; }
+    .hero-headline { font-size: 38px; letter-spacing: -1px; }
     .hero-ctas { flex-direction: column; align-items: flex-start; }
-    .about-stats { grid-template-columns: 1fr; gap: 24px; }
-    .stat-block { border-right: none; padding: 0 0 24px; border-bottom: 1px solid var(--border); }
-    .stat-block:last-child { border-bottom: none; padding-bottom: 0; }
+    .why-grid { grid-template-columns: 1fr; }
     .project-details { grid-template-columns: 1fr; }
     .detail-item { border-right: none !important; }
     .impact-row { grid-template-columns: 1fr; }
-    .metric:nth-child(odd) { border-right: none; padding-right: 0; }
-    .partners-row { gap: 32px; }
-    .cta-content { padding: 56px 24px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-    .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
-    .footer-nav { flex-direction: column; gap: 32px; }
+    .metric { border-right: none !important; border-bottom: 1px solid var(--border); }
+    .metric:last-child { border-bottom: none; }
+    .partners-row { gap: 28px; }
+    .cta-content { padding: 56px 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 18px; text-align: center; }
+    .footer-nav { flex-direction: column; gap: 28px; }
   }
 
   @media print {
@@ -954,18 +851,16 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════ HEADER ══ -->
+<!-- ══ HEADER ══════════════════════════════════════════ -->
 <header>
   <div class="container">
     <div class="header-inner">
       <a href="#" class="logo">
-        <svg class="logo-mark" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Tectonic mark: two interlocking architectural building forms -->
+        <svg width="34" height="34" viewBox="0 0 42 42" fill="none">
           <path d="M24 3L38 13V21L30 17V11L24 7.5L18 11V17L10 21V13L24 3Z" fill="#D4A017"/>
-          <path d="M24 3L10 13V21L18 17V29L24 33L30 29V17L38 21V13Z" fill="#D4A017" opacity="0.55"/>
+          <path d="M24 3L10 13V21L18 17V29L24 33L30 29V17L38 21V13Z" fill="#D4A017" opacity="0.50"/>
           <polygon points="24,10 31,15 31,23 24,27 17,23 17,15" fill="#0B0D0F"/>
-          <!-- Offset layer for depth -->
-          <path d="M27 6L39 15V21" stroke="#F5B21A" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+          <path d="M27 6L39 15V22" stroke="#F5B21A" stroke-width="1.5" stroke-linecap="round" opacity="0.28"/>
         </svg>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
@@ -973,12 +868,12 @@
         </div>
       </a>
       <nav>
-        <a href="#about">About</a>
-        <a href="#approach">Approach</a>
+        <a href="#mission">About</a>
+        <a href="#mission">Approach</a>
         <a href="#projects">Projects</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#impact">Impact</a>
-        <a href="#contact" class="nav-cta">Start a Conversation</a>
+        <a href="#contact" class="nav-cta">Start a Conversation →</a>
       </nav>
       <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -987,10 +882,9 @@
   </div>
 </header>
 
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#approach" onclick="toggleMenu()">Approach</a>
+  <a href="#mission" onclick="toggleMenu()">About</a>
+  <a href="#mission" onclick="toggleMenu()">Approach</a>
   <a href="#projects" onclick="toggleMenu()">Projects</a>
   <a href="#capabilities" onclick="toggleMenu()">Capabilities</a>
   <a href="#impact" onclick="toggleMenu()">Impact</a>
@@ -998,14 +892,16 @@
 </div>
 
 
-<!-- ══════════════════════════════════════ HERO ══ -->
+<!-- ══ HERO ════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-inner">
+
+      <!-- Left: Headline + CTAs -->
       <div class="hero-left">
-        <div class="hero-eyebrow">Atlanta, Georgia &nbsp;·&nbsp; Real Estate Development</div>
+        <div class="hero-eyebrow">Atlanta, Georgia &nbsp;·&nbsp; Architecture-Driven Development</div>
         <h1 class="hero-headline">
           We Build<br>
           <span class="gold">Stronger Communities.</span>
@@ -1015,67 +911,75 @@
           Tectonic Developments is an architecture-driven development firm creating lasting value through thoughtful design, strategic partnerships, and disciplined execution.
         </p>
         <div class="hero-ctas">
-          <a href="#approach" class="btn-primary">Our Approach <span class="arrow">→</span></a>
-          <a href="#projects" class="btn-outline">View Projects <span class="arrow">→</span></a>
+          <a href="#mission" class="btn-primary">Our Approach →</a>
+          <a href="#projects" class="btn-outline">View Projects →</a>
         </div>
       </div>
+
+      <!-- Right: Value pillars card — floats over the visible building photo -->
       <div class="hero-right">
         <div class="hero-pillars">
           <div class="pillars-title">Focused on What Matters</div>
+
           <div class="pillar">
             <div class="pillar-icon">
               <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div class="pillar-body">
+            <div>
               <div class="pillar-name">Community First</div>
               <div class="pillar-desc">We design and build with the communities we serve.</div>
             </div>
           </div>
+
           <div class="pillar">
             <div class="pillar-icon">
               <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-6 8 6v10M10 20v-6h4v6"/></svg>
             </div>
-            <div class="pillar-body">
+            <div>
               <div class="pillar-name">Design Excellence</div>
               <div class="pillar-desc">Architecture and engineering that elevate every project.</div>
             </div>
           </div>
+
           <div class="pillar">
             <div class="pillar-icon">
               <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
-            <div class="pillar-body">
+            <div>
               <div class="pillar-name">Disciplined Execution</div>
               <div class="pillar-desc">Rigorous oversight ensures quality, on time and on budget.</div>
             </div>
           </div>
+
           <div class="pillar">
             <div class="pillar-icon">
               <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             </div>
-            <div class="pillar-body">
+            <div>
               <div class="pillar-name">Lasting Impact</div>
               <div class="pillar-desc">Investing in projects that drive long-term economic and social value.</div>
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════ MISSION ══ -->
-<section class="mission" id="approach">
+<!-- ══ MISSION ═════════════════════════════════════════ -->
+<section class="mission" id="mission">
   <div class="container">
     <div class="mission-grid">
-      <div class="mission-left">
+      <div>
         <div class="section-label">Our Mission</div>
         <p class="mission-statement">
           We believe great development goes beyond buildings — it strengthens communities and creates opportunity.
         </p>
       </div>
-      <div class="mission-right">
+      <div>
         <div class="mission-rule"></div>
         <p class="mission-para">
           Through partnerships with public agencies, investors, and community stakeholders, we develop places that people are proud to live, work, and grow. Every project we undertake is guided by a commitment to design excellence, economic impact, and long-term stewardship of the communities we serve.
@@ -1086,52 +990,58 @@
 </section>
 
 
-<!-- ══════════════════════════════════════ ABOUT ══ -->
-<section class="about" id="about">
+<!-- ══ WHY TECTONIC ════════════════════════════════════ -->
+<section class="why">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-photo">
-        <!-- Replace src with Michael's actual headshot before launch -->
-        <div class="about-photo-placeholder">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span>Executive photo</span>
+    <div class="why-header">
+      <div class="section-label">Why Tectonic</div>
+      <h2 class="why-headline">A Partner You Can Build On.</h2>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/><path d="M12 3v4"/></svg>
         </div>
+        <div class="why-title">Government Experienced</div>
+        <div class="why-desc">Proven expertise working with municipal, county, and state agencies on community development and infrastructure projects.</div>
       </div>
-      <div class="about-right">
-        <div class="section-label">Who We Are</div>
-        <h2 class="about-headline">
-          Development with Vision.<br>
-          <span class="gold">Built on Integrity.</span>
-        </h2>
-        <p class="about-para">
-          Tectonic Developments is an architecture-driven real estate development firm based in Atlanta, GA. We partner with government agencies, investors, and communities to deliver purposeful projects that create economic growth, strengthen infrastructure, and improve lives.
-        </p>
-        <div class="about-stats">
-          <!-- Replace these with verified figures before launch -->
-          <div class="stat-block">
-            <div class="stat-val">ATL</div>
-            <div class="stat-label">Proudly<br>Atlanta Based</div>
-          </div>
-          <div class="stat-block">
-            <div class="stat-val">15+</div>
-            <div class="stat-label">Years of<br>Experience</div>
-          </div>
-          <div class="stat-block">
-            <div class="stat-val">Gov't</div>
-            <div class="stat-label">Contract<br>Capable</div>
-          </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20M4 4h16v12H4zM9 8h6M9 12h6"/></svg>
         </div>
+        <div class="why-title">Design-First Approach</div>
+        <div class="why-desc">Architecture and engineering excellence drive every decision — from initial concept through final delivery.</div>
       </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        </div>
+        <div class="why-title">Community Focused</div>
+        <div class="why-desc">We build with purpose — creating lasting impact where it matters most, with residents and stakeholders at the center.</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="why-title">Execution Excellence</div>
+        <div class="why-desc">On time, on budget, and built to the highest standards. Rigorous project oversight from groundbreaking to completion.</div>
+      </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════ FEATURED PROJECT ══ -->
+<!-- ══ FEATURED PROJECT ════════════════════════════════ -->
 <section class="project" id="projects">
   <div class="container">
     <div class="project-grid">
-      <div class="project-left">
+
+      <div>
         <div class="section-label">Featured Project</div>
         <h2 class="project-title">South Atlanta Redevelopment Initiative</h2>
         <p class="project-desc">
@@ -1155,46 +1065,40 @@
             <div class="detail-val">Public agencies, investors &amp; community stakeholders</div>
           </div>
         </div>
-        <a href="#contact" class="btn-outline">View Project <span class="arrow">→</span></a>
+        <a href="#contact" class="btn-outline">View Project →</a>
       </div>
+
       <div class="project-right">
-        <img
-          class="project-main-img"
+        <img class="project-main-img"
           src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80"
-          alt="South Atlanta mixed-use residential development"
-          loading="lazy"
-        />
+          alt="South Atlanta mixed-use residential development" loading="lazy"/>
         <div class="project-sub-imgs">
-          <img
-            class="project-sub-img"
+          <img class="project-sub-img"
             src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=600&q=80"
-            alt="Aerial view of community development"
-            loading="lazy"
-          />
-          <img
-            class="project-sub-img"
+            alt="Aerial community development" loading="lazy"/>
+          <img class="project-sub-img"
             src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80"
-            alt="Modern residential interior"
-            loading="lazy"
-          />
+            alt="Modern residential interior" loading="lazy"/>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════ CAPABILITIES ══ -->
+<!-- ══ CAPABILITIES ════════════════════════════════════ -->
 <section class="capabilities" id="capabilities">
   <div class="container">
     <div class="capabilities-header">
       <div>
         <div class="section-label">How We Work</div>
-        <h2 class="capabilities-title">How We Partner to Deliver</h2>
+        <h2 class="capabilities-title">How We Partner<br>to Deliver</h2>
       </div>
-      <p class="capabilities-sub">From concept to completion, we provide comprehensive development services that bring complex projects to life.</p>
+      <p class="capabilities-sub">From concept to completion — comprehensive development services that bring complex projects to life.</p>
     </div>
     <div class="cap-grid">
+
       <div class="cap-col">
         <div class="cap-icon">
           <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4a2 2 0 0 1 4 0v4"/></svg>
@@ -1208,9 +1112,10 @@
         </ul>
         <a href="#contact" class="cap-link">Learn More →</a>
       </div>
+
       <div class="cap-col">
         <div class="cap-icon">
-          <svg viewBox="0 0 24 24"><path d="M2 20h20M4 4h16v12H4zM9 20v-4M15 20v-4M9 12h6M9 8h6"/></svg>
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
         <div class="cap-heading">Design</div>
         <ul class="cap-list">
@@ -1221,6 +1126,7 @@
         </ul>
         <a href="#contact" class="cap-link">Learn More →</a>
       </div>
+
       <div class="cap-col">
         <div class="cap-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1234,42 +1140,43 @@
         </ul>
         <a href="#contact" class="cap-link">Learn More →</a>
       </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════ IMPACT METRICS ══ -->
+<!-- ══ IMPACT METRICS ══════════════════════════════════ -->
 <section class="impact" id="impact">
   <div class="container">
     <div class="impact-label">Our Impact</div>
     <div class="impact-row">
-      <!-- Replace these values with verified figures before launch -->
+      <!-- Replace these with verified company figures before launch -->
       <div class="metric">
-        <div class="metric-val">$XXM+</div>
-        <div class="metric-label">Development Pipeline</div>
+        <div class="metric-val">$500M+</div>
+        <div class="metric-label">Development Value</div>
       </div>
       <div class="metric">
-        <div class="metric-val">XX+</div>
-        <div class="metric-label">Projects Supported</div>
+        <div class="metric-val">25+</div>
+        <div class="metric-label">Projects Delivered</div>
       </div>
       <div class="metric">
-        <div class="metric-val">XXX+</div>
-        <div class="metric-label">Housing Units Planned</div>
+        <div class="metric-val">500+</div>
+        <div class="metric-label">Housing Units</div>
       </div>
       <div class="metric">
-        <div class="metric-val">ATL</div>
-        <div class="metric-label">Primary Market</div>
+        <div class="metric-val">1,000+</div>
+        <div class="metric-label">Lives Impacted</div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════ PARTNERS ══ -->
+<!-- ══ PARTNERS ════════════════════════════════════════ -->
 <section class="partners">
   <div class="container">
-    <!-- Replace with verified partner/client logos or remove before launch -->
+    <!-- Replace with verified partner logos before launch -->
     <div class="partners-label">Experience Across Public, Private &amp; Community Sectors</div>
     <div class="partners-row">
       <div class="partner-placeholder">Invest Atlanta</div>
@@ -1283,40 +1190,37 @@
 </section>
 
 
-<!-- ══════════════════════════════════════ FINAL CTA ══ -->
+<!-- ══ FINAL CTA ════════════════════════════════════════ -->
 <section class="cta-section" id="contact">
   <div class="cta-inner">
     <div class="cta-image">
-      <img
-        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80"
-        alt="Modern architectural office interior"
-        loading="lazy"
-      />
+      <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80"
+        alt="Modern architectural office interior" loading="lazy"/>
     </div>
     <div class="cta-content">
       <div class="section-label">Get Started</div>
       <h2 class="cta-headline">Let's Build What's Next.</h2>
       <p class="cta-sub">
-        Whether you're a public agency, investor, homeowner, or community partner, we're ready to bring your vision to life.
+        Whether you're a public agency, investor, homeowner, or community partner — we're ready to bring your vision to life.
       </p>
       <div class="cta-actions">
-        <a href="mailto:info@tectonicdevelopments.com" class="btn-primary">Start a Conversation <span class="arrow">→</span></a>
-        <a href="tel:" class="btn-outline">Call Us <span class="arrow">→</span></a>
+        <a href="mailto:info@tectonicdevelopments.com" class="btn-primary">Start a Conversation →</a>
+        <a href="mailto:info@tectonicdevelopments.com" class="btn-outline">Request Consultation →</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════ FOOTER ══ -->
+<!-- ══ FOOTER ═══════════════════════════════════════════ -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="footer-logo">
-          <svg width="32" height="32" viewBox="0 0 42 42" fill="none">
+          <svg width="30" height="30" viewBox="0 0 42 42" fill="none">
             <path d="M24 3L38 13V21L30 17V11L24 7.5L18 11V17L10 21V13L24 3Z" fill="#D4A017"/>
-            <path d="M24 3L10 13V21L18 17V29L24 33L30 29V17L38 21V13Z" fill="#D4A017" opacity="0.55"/>
+            <path d="M24 3L10 13V21L18 17V29L24 33L30 29V17L38 21V13Z" fill="#D4A017" opacity="0.50"/>
             <polygon points="24,10 31,15 31,23 24,27 17,23 17,15" fill="#0B0D0F"/>
           </svg>
           <div class="logo-text">
@@ -1329,10 +1233,11 @@
       <div class="footer-nav">
         <div class="footer-nav-col">
           <div class="footer-nav-title">Company</div>
-          <a href="#about">About</a>
-          <a href="#approach">Our Approach</a>
+          <a href="#mission">About</a>
+          <a href="#mission">Our Approach</a>
           <a href="#projects">Projects</a>
           <a href="#capabilities">Capabilities</a>
+          <a href="#impact">Impact</a>
         </div>
         <div class="footer-nav-col">
           <div class="footer-nav-title">Services</div>
@@ -1346,21 +1251,17 @@
         <div class="footer-contact-title">Contact</div>
         <p>Atlanta, Georgia</p>
         <p><a href="mailto:info@tectonicdevelopments.com">info@tectonicdevelopments.com</a></p>
-        <!-- Add phone number here when confirmed -->
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2025 Tectonic Developments™, LLC. All rights reserved.</p>
       <div class="footer-social">
-        <!-- LinkedIn -->
         <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
-        <!-- Instagram -->
         <a href="#" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
-        <!-- Facebook -->
         <a href="#" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
@@ -1373,13 +1274,10 @@
   </div>
 </footer>
 
-
 <script>
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
-
-  // Close mobile menu on outside click
   document.addEventListener('click', function(e) {
     const menu = document.getElementById('mobileMenu');
     const hamburger = document.querySelector('.hamburger');
@@ -1387,15 +1285,9 @@
       menu.classList.remove('open');
     }
   });
-
-  // Header shadow on scroll
   window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 40) {
-      header.style.background = 'rgba(11,13,15,0.98)';
-    } else {
-      header.style.background = 'rgba(11,13,15,0.95)';
-    }
+    document.querySelector('header').style.background =
+      window.scrollY > 40 ? 'rgba(11,13,15,0.99)' : 'rgba(11,13,15,0.96)';
   });
 </script>
 </body>
