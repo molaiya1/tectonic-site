@@ -127,17 +127,27 @@
     font-family: var(--head);
     font-size: 15px;
     font-weight: 800;
-    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--white);
+    /* Justify spreads TECTONIC to fill the same width as DEVELOPMENTS™ below */
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    -moz-text-align-last: justify;
+    letter-spacing: 0.5px;
   }
   .logo-sub {
     font-family: var(--head);
     font-size: 8px;
     font-weight: 600;
-    letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--gold);
+    /* Justify spreads DEVELOPMENTS™ to fill same width as TECTONIC above */
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    -moz-text-align-last: justify;
+    letter-spacing: 0.5px;
   }
   nav { display: flex; align-items: center; gap: 36px; }
   nav a {
