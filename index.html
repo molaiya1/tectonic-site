@@ -608,7 +608,7 @@
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.70) saturate(0.85);
+    filter: saturate(0.45) brightness(0.55) contrast(1.12);
   }
   .exec-img-shade {
     position: absolute;
@@ -702,12 +702,13 @@
   .df-val { font-size: 13px; color: var(--dim); line-height: 1.5; }
 
   .df-images { display: flex; flex-direction: column; gap: 4px; }
+  /* Unified dark treatment for all section images — keeps everything in the same tonal family */
   .df-img-main {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
     display: block;
-    filter: brightness(0.88);
+    filter: saturate(0.55) brightness(0.70) contrast(1.08);
   }
   .df-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
   .df-img-sm {
@@ -715,7 +716,7 @@
     aspect-ratio: 16/10;
     object-fit: cover;
     display: block;
-    filter: brightness(0.82);
+    filter: saturate(0.50) brightness(0.65) contrast(1.10);
   }
 
   /* ── CAPABILITIES ───────────────────────────────────── */
@@ -1107,7 +1108,7 @@
     <source src="/assets/tectonic-reel.mp4" type="video/mp4">
   </video>
   <!-- Fallback bg if video src is empty -->
-  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=40');background-size:cover;background-position:center;filter:saturate(0.5) brightness(0.35);"></div>
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=40');background-size:cover;background-position:center;filter:saturate(0.35) brightness(0.30);"></div>
   <div class="vid-strip-overlay"></div>
 </div>
 
@@ -1163,8 +1164,9 @@
   <div class="exec-grid">
 
     <div class="exec-img">
+      <!-- Construction oversight — darker exposure, cooler tones -->
       <img
-        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
+        src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80"
         alt="Construction oversight and project management"
         loading="lazy"/>
       <div class="exec-img-shade"></div>
@@ -1258,21 +1260,21 @@
       </div>
 
       <div class="df-images">
-        <!-- Main: residential courtyard at dusk — warm, inviting, architectural -->
+        <!-- Main: modern multifamily at dusk — dark sky, warm interior lights match brand -->
         <img class="df-img-main"
-          src="https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=1200&q=80"
+          src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80"
           alt="Residential development community — Atlanta, GA"
           loading="lazy"/>
         <div class="df-img-row">
-          <!-- Aerial Atlanta neighborhood context -->
+          <!-- Aerial city at night — dark tones, consistent palette -->
           <img class="df-img-sm"
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=700&q=80"
-            alt="Aerial community development view"
+            src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=700&q=80"
+            alt="Aerial city development view"
             loading="lazy"/>
-          <!-- Modern residential interior — finished product -->
+          <!-- Modern architectural exterior at dusk — dark and premium -->
           <img class="df-img-sm"
-            src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=700&q=80"
-            alt="Modern residential interior"
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80"
+            alt="Modern architectural exterior"
             loading="lazy"/>
         </div>
       </div>
@@ -1390,10 +1392,11 @@
 
     <!-- Left: Premium glass commercial building — architecture-forward -->
     <div class="cta-vid-panel">
+      <!-- Dark glass building at dusk — cool tones, premium, architectural -->
       <img
-        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80"
+        src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=900&q=80"
         alt="Modern architecture-driven development"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.75) brightness(0.45);"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.45) brightness(0.40) contrast(1.15);"
         loading="lazy"/>
       <div class="cta-vid-shade"></div>
       <div class="cta-trust">
