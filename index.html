@@ -787,7 +787,27 @@
     padding: 88px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
+  /* Logo watermark behind metrics */
+  .impact::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background-image: url('/assets/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .impact-hd, .impact-row { position: relative; z-index: 1; }
   .impact-hd {
     text-align: center;
     font-family: var(--head);
@@ -891,7 +911,26 @@
     background: var(--black);
     border-top: 1px solid var(--border);
     padding: 72px 0 40px;
+    position: relative;
+    overflow: hidden;
   }
+  /* Logo watermark — bottom right, very subtle */
+  footer::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 280px;
+    height: 280px;
+    background-image: url('/assets/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .ft-grid, .ft-bottom { position: relative; z-index: 1; }
   .ft-grid {
     display: grid;
     grid-template-columns: 280px 1fr 220px;
@@ -1000,12 +1039,7 @@
   <div class="container">
     <div class="hdr">
       <a href="#" class="logo">
-        <svg width="34" height="34" viewBox="0 0 42 42" fill="none">
-          <path d="M24 3L38 13V21L30 17V11L24 7.5L18 11V17L10 21V13L24 3Z" fill="#D4A017"/>
-          <path d="M24 3L10 13V21L18 17V29L24 33L30 29V17L38 21V13Z" fill="#D4A017" opacity="0.48"/>
-          <polygon points="24,10 31,15 31,23 24,27 17,23 17,15" fill="#0B0D0F"/>
-          <path d="M27 6L38 14V21" stroke="#F5B21A" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
-        </svg>
+        <img src="/assets/logo-mark.png" width="36" height="36" alt="Tectonic Developments mark" style="display:block;flex-shrink:0;"/>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
           <span class="logo-sub">Developments™</span>
@@ -1422,7 +1456,7 @@
       <p class="cta-copy">Whether you're a public agency, investor, homeowner, or community partner — we're ready to bring your vision to life. Let's start with a conversation.</p>
       <div class="cta-btns">
         <a href="mailto:info@tectonicdevelopments.com" class="btn btn-gold">Start a Conversation →</a>
-        <a href="mailto:info@tectonicdevelopments.com" class="btn btn-ghost">Request Consultation →</a>
+        <a href="tel:4042081108" class="btn btn-ghost">404-208-1108 →</a>
       </div>
     </div>
   </div>
@@ -1466,7 +1500,8 @@
       </div>
       <div class="ft-contact">
         <div class="ft-contact-title">Contact</div>
-        <p>Atlanta, Georgia</p>
+        <p>3343 Peachtree Rd. NE, Suite 2236<br>Atlanta, GA 30326</p>
+        <p><a href="tel:4042081108">404-208-1108</a></p>
         <p><a href="mailto:info@tectonicdevelopments.com">info@tectonicdevelopments.com</a></p>
       </div>
     </div>
