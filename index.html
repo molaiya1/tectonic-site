@@ -444,14 +444,14 @@
     display: block;
     filter: brightness(0.55) grayscale(15%);
   }
-  /* Fallback still image while video unavailable */
+  /* Fallback still image — architectural blueprints/planning */
   .founder-media-img {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80');
+    background-image: url('https://images.unsplash.com/photo-1503387762-592dfa019fbc?w=900&q=80');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.50) grayscale(20%);
+    filter: brightness(0.45) grayscale(15%);
   }
   .founder-shade {
     position: absolute;
@@ -1197,8 +1197,12 @@
       The fallback image below shows until video is available.
     -->
     <div class="founder-media">
-      <!-- Static architectural image — premium dark treatment -->
-      <div class="founder-media-img"></div>
+      <video class="vid-el" autoplay muted loop playsinline preload="auto"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <source src="/assets/tectonic-reel.mp4" type="video/mp4">
+      </video>
+      <!-- Fallback: architectural blueprints (shows if video fails) -->
+      <div class="founder-media-img" id="founderFallback"></div>
       <div class="founder-shade"></div>
       <div class="founder-caption">
         <div class="founder-caption-rule"></div>
@@ -1254,18 +1258,21 @@
       </div>
 
       <div class="df-images">
+        <!-- Main: residential courtyard at dusk — warm, inviting, architectural -->
         <img class="df-img-main"
-          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80"
-          alt="Mixed-use residential development — Atlanta, GA"
+          src="https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=1200&q=80"
+          alt="Residential development community — Atlanta, GA"
           loading="lazy"/>
         <div class="df-img-row">
+          <!-- Aerial Atlanta neighborhood context -->
           <img class="df-img-sm"
-            src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=700&q=80"
-            alt="Aerial community development"
+            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=700&q=80"
+            alt="Aerial community development view"
             loading="lazy"/>
+          <!-- Modern residential interior — finished product -->
           <img class="df-img-sm"
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80"
-            alt="Development site planning"
+            src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=700&q=80"
+            alt="Modern residential interior"
             loading="lazy"/>
         </div>
       </div>
@@ -1381,19 +1388,14 @@
 <section class="cta" id="contact">
   <div class="cta-wrap">
 
-    <!-- Left: Video panel with trust overlay -->
+    <!-- Left: Premium glass commercial building — architecture-forward -->
     <div class="cta-vid-panel">
-      <video class="vid-el" autoplay muted loop playsinline preload="auto">
-        <source src="/assets/tectonic-reel.mp4" type="video/mp4">
-      </video>
-      <!-- Fallback image shows if video fails to load -->
-      <img id="ctaFallback"
-        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80"
-        alt="Development environment"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.6) contrast(1.1) brightness(0.42);"
+      <img
+        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80"
+        alt="Modern architecture-driven development"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.75) brightness(0.45);"
         loading="lazy"/>
       <div class="cta-vid-shade"></div>
-      <!-- Trust phrases — appear on top of video/image -->
       <div class="cta-trust">
         <div class="cta-trust-line">Real experience.</div>
         <div class="cta-trust-line">Thoughtful development.</div>
