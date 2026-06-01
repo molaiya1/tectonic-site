@@ -195,24 +195,24 @@
   .hero-img {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80');
+    background-image: url('/assets/hero-community.jpg');
     background-size: cover;
-    background-position: center 40%;
+    background-position: center center;
     z-index: 0;
   }
 
-  /* Layered overlay: left opaque → right reveals image → subtle bottom fade */
+  /* Cinematic gradient: heavy dark left for headline, right stays open to reveal community/building */
   .hero-shade {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(to bottom, rgba(11,13,15,0) 60%, rgba(11,13,15,0.85) 100%),
+      linear-gradient(to bottom, rgba(5,8,12,0) 55%, rgba(5,8,12,0.80) 100%),
       linear-gradient(
-        108deg,
-        rgba(11,13,15,0.98) 0%,
-        rgba(11,13,15,0.90) 35%,
-        rgba(11,13,15,0.50) 60%,
-        rgba(11,13,15,0.22) 100%
+        90deg,
+        rgba(5,8,12,0.88) 0%,
+        rgba(5,8,12,0.72) 35%,
+        rgba(5,8,12,0.42) 65%,
+        rgba(5,8,12,0.18) 100%
       );
     z-index: 1;
   }
@@ -596,6 +596,49 @@
     flex-shrink: 0;
   }
 
+  /* ── DISCIPLINED EXECUTION ──────────────────────────── */
+  .execution { background: var(--black); overflow: hidden; border-top: 1px solid var(--border); }
+  .exec-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
+  .exec-img {
+    position: relative;
+    overflow: hidden;
+    background: var(--slate);
+  }
+  .exec-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.70) saturate(0.85);
+  }
+  .exec-img-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(11,13,15,0.10) 0%, rgba(11,13,15,0.50) 100%);
+  }
+  .exec-content {
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--charcoal);
+  }
+  .exec-headline {
+    font-family: var(--head);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+  .exec-body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.85;
+    max-width: 440px;
+  }
+
   /* ── DEVELOPMENT FOCUS ──────────────────────────────── */
   .devfocus {
     background: var(--charcoal);
@@ -888,6 +931,9 @@
     .timeline::before { display: none; }
     .step { align-items: flex-start; text-align: left; }
     .step-rule { margin: 0 0 14px; }
+    .exec-grid { grid-template-columns: 1fr; }
+    .exec-img { min-height: 280px; }
+    .exec-content { padding: 64px 40px; }
     .founder-grid { grid-template-columns: 1fr; }
     .founder-media { min-height: 300px; }
     .founder-media-img { filter: brightness(0.45); }
@@ -1108,6 +1154,33 @@
         <p class="step-desc">We measure success by the long-term value created for residents, partners, neighborhoods, and the city.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ══ DISCIPLINED EXECUTION ══════════════════════════════════════════ -->
+<section class="execution">
+  <div class="exec-grid">
+
+    <div class="exec-img">
+      <img
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
+        alt="Construction oversight and project management"
+        loading="lazy"/>
+      <div class="exec-img-shade"></div>
+    </div>
+
+    <div class="exec-content">
+      <div class="label">Disciplined Execution</div>
+      <h2 class="exec-headline">Vision Means Little<br>Without Delivery.</h2>
+      <p class="exec-body">
+        From project planning and consultant coordination to construction oversight and stakeholder management, we maintain a disciplined approach focused on quality, accountability, and long-term value creation.
+      </p>
+      <p class="exec-body" style="margin-top:16px;">
+        Every project we deliver reflects a commitment to keeping timelines, protecting budgets, and producing outcomes that communities are proud of for decades.
+      </p>
+    </div>
+
   </div>
 </section>
 
