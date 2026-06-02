@@ -1229,20 +1229,117 @@
   }
 
   @media (max-width: 640px) {
-    .hero-h1 { font-size: 40px; letter-spacing: -1.5px; }
-    .hero-btns { flex-direction: column; align-items: flex-start; }
-    .timeline { grid-template-columns: 1fr; gap: 32px; }
+    /* ── Container ── */
+    .container { padding: 0 20px; }
+
+    /* ── Header ── */
+    header { height: 72px; }
+    .mmenu { top: 72px; }
+    .logo img[width="68"] { width: 46px !important; height: 46px !important; }
+    .logo-name { font-size: 18px; letter-spacing: 1.5px; }
+    .logo-sub { font-size: 9px; letter-spacing: 2px; }
+
+    /* ── Hero ── */
+    .hero-inner { padding: 96px 0 56px; }
+    .hero-eyebrow { font-size: 8px; letter-spacing: 2px; flex-wrap: wrap; }
+    .hero-h1 { font-size: 36px; letter-spacing: -1px; margin-bottom: 20px; }
+    .hero-rule { margin-bottom: 20px; }
+    .hero-p { font-size: 14px; margin-bottom: 32px; }
+    .hero-btns { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .btn { padding: 13px 22px; font-size: 9.5px; }
+
+    /* ── Mission ── */
+    .mission { padding: 56px 0; }
+    .mission-stmt { font-size: 21px; }
+
+    /* ── Approach ── */
+    .approach { padding: 56px 0; }
+    .approach-title { font-size: 28px; }
+    .approach-sub { font-size: 13px; }
+    .approach-bp { opacity: 0.10; } /* Less busy on small screens */
+    .timeline { grid-template-columns: 1fr; gap: 28px; }
+    .step-num { width: 36px; height: 36px; font-size: 10px; margin-bottom: 14px; }
+    .step-title { font-size: 10px; }
+    .step-desc { font-size: 12px; }
+
+    /* ── Execution ── */
+    .execution .exec-content { padding: 40px 20px; }
+    .exec-headline { font-size: 22px; }
+    .exec-body { font-size: 14px; }
+
+    /* ── Founder ── */
+    .founder-media { min-height: 240px; }
+    .founder-content { padding: 40px 20px; }
+    .founder-quote { font-size: 22px; margin-bottom: 20px; }
+    .founder-body { font-size: 14px; }
+
+    /* ── Development Focus ── */
+    .devfocus { padding: 56px 0; }
+    .df-title { font-size: 24px; }
     .df-details { grid-template-columns: 1fr; }
     .df-item { border-right: none !important; }
     .df-img-row { grid-template-columns: 1fr; }
+
+    /* ── Capabilities ── */
+    .caps { padding: 56px 0; }
+    .caps-title { font-size: 24px; }
+    .cap { padding: 32px 24px; }
+    .cap-head { font-size: 11px; }
+
+    /* ── Impact Metrics ── */
+    .impact { padding: 56px 0; }
+    .impact-hd { margin-bottom: 36px; }
     .impact-row { grid-template-columns: 1fr; }
-    .metric { border-right: none !important; border-bottom: 1px solid var(--border); }
+    .metric { border-right: none !important; border-bottom: 1px solid var(--border); padding: 20px 0; }
     .metric:last-child { border-bottom: none; }
-    .cta-body { padding: 56px 24px; }
-    .ft-grid { grid-template-columns: 1fr; }
-    .ft-bottom { flex-direction: column; gap: 18px; text-align: center; }
-    .ft-nav { flex-direction: column; gap: 28px; }
-    .partners-row { gap: 24px; }
+    .metric-n { font-size: 44px; }
+
+    /* ── Partner Marquee ── */
+    .partners { padding: 36px 0; }
+    .partner-item { padding: 0 20px; }
+    .partner-item span { font-size: 9.5px; letter-spacing: 1.5px; }
+    .partner-item img { max-height: 22px; max-width: 80px; }
+    .marquee-track { animation-duration: 24s; }
+
+    /* ── CTA / Contact Form ── */
+    .cta-vid-panel { height: 180px; }
+    .cta-body { padding: 40px 20px; gap: 16px; }
+    .cta-title { font-size: 26px; }
+    .cta-copy { font-size: 13.5px; }
+    .form-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+    .form-full { margin-bottom: 12px; }
+    .field label { font-size: 8px; letter-spacing: 2px; }
+    /* 16px minimum prevents iOS auto-zoom on input focus */
+    .field input,
+    .field select,
+    .field textarea { font-size: 16px; padding: 11px 12px; }
+    .form-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+    /* ── Footer ── */
+    footer { padding: 48px 0 28px; }
+    .ft-grid { grid-template-columns: 1fr; gap: 32px; }
+    .ft-logo img { width: 46px !important; height: 46px !important; }
+    .ft-logo .logo-name { font-size: 18px; }
+    .ft-logo .logo-sub { font-size: 9px; }
+    .ft-nav { flex-direction: column; gap: 24px; }
+    .ft-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .ft-social { justify-content: center; }
+    .ft-links { justify-content: center; }
+    .ft-legal p { font-size: 9px; padding: 0; }
+
+    /* ── Misc ── */
+    .why-grid { grid-template-columns: 1fr; }
+    .why-card { padding: 28px 20px; }
+    .why-title { font-size: 10px; }
+    .label { font-size: 8.5px; letter-spacing: 3px; }
+    .section-title { font-size: 9px; }
+  }
+
+  /* ── Extra small (iPhone SE, older devices) ── */
+  @media (max-width: 375px) {
+    .hero-h1 { font-size: 32px; }
+    .logo-name { font-size: 16px; }
+    .container { padding: 0 16px; }
   }
 
   @media print {
