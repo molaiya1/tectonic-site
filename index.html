@@ -931,38 +931,37 @@
   .marquee-track {
     display: flex;
     align-items: center;
-    gap: 56px;
+    gap: 0;
     width: max-content;
-    animation: marquee-scroll 28s linear infinite;
+    animation: marquee-scroll 32s linear infinite;
   }
   .marquee-track:hover { animation-play-state: paused; }
-  .partner-logo {
+  .partner-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 40px;
     flex-shrink: 0;
-    opacity: 0.35;
-    filter: grayscale(1) brightness(1.8);
-    transition: opacity 0.2s, filter 0.2s;
+    gap: 0;
   }
-  .partner-logo:hover { opacity: 0.65; filter: grayscale(0.3) brightness(1.2); }
-  .partner-logo img {
-    max-height: 36px;
-    max-width: 120px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
-  /* Fallback text for logos that don't load */
-  .partner-logo span {
+  .partner-item-name {
     font-family: var(--head);
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--white);
+    color: rgba(255,255,255,0.32);
     white-space: nowrap;
+    padding: 0 40px;
+    transition: color 0.2s;
+  }
+  .partner-item:hover .partner-item-name { color: rgba(255,255,255,0.65); }
+  /* Gold dot separator between items */
+  .partner-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.30;
+    flex-shrink: 0;
   }
 
   /* ── CONTACT FORM ───────────────────────────────────── */
@@ -1774,27 +1773,27 @@
   <div class="marquee-wrap">
     <div class="marquee-track">
       <!-- Set A -->
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=fultoncountyga.gov&sz=128" alt="Fulton County" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">Fulton County</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=investatlanta.com&sz=128" alt="Invest Atlanta" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">Invest Atlanta</span></div>
-      <div class="partner-logo"><span>Carroll Daniels</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=atlantahousing.org&sz=128" alt="Atlanta Housing" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">Atlanta Housing</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=dca.ga.gov&sz=128" alt="Georgia DCA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">Georgia DCA</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=lisc.org&sz=128" alt="LISC Atlanta" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">LISC Atlanta</span></div>
-      <div class="partner-logo"><img src="https://bakercollins.com/wp-content/uploads/2021/03/Baker-Collins-CV.png" alt="Baker Collins &amp; Co" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">Baker Collins &amp; Co</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=hud.gov&sz=128" alt="HUD" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">HUD</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=sam.gov&sz=128" alt="SAM.gov" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">SAM.gov</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=bidnet.com&sz=128" alt="BidNet" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span style="display:none">BidNet</span></div>
+      <div class="partner-item"><span class="partner-item-name">Fulton County</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Invest Atlanta</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Carroll Daniels</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Atlanta Housing</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Georgia DCA</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">LISC Atlanta</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Baker Collins &amp; Co</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">HUD</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">SAM.gov</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">BidNet</span></div><div class="partner-dot"></div>
       <!-- Set B (duplicate for seamless loop) -->
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=fultoncountyga.gov&sz=128" alt="Fulton County"/><span style="display:none">Fulton County</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=investatlanta.com&sz=128" alt="Invest Atlanta"/><span style="display:none">Invest Atlanta</span></div>
-      <div class="partner-logo"><span>Carroll Daniels</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=atlantahousing.org&sz=128" alt="Atlanta Housing"/><span style="display:none">Atlanta Housing</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=dca.ga.gov&sz=128" alt="Georgia DCA"/><span style="display:none">Georgia DCA</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=lisc.org&sz=128" alt="LISC Atlanta"/><span style="display:none">LISC Atlanta</span></div>
-      <div class="partner-logo"><img src="https://bakercollins.com/wp-content/uploads/2021/03/Baker-Collins-CV.png" alt="Baker Collins &amp; Co"/><span style="display:none">Baker Collins &amp; Co</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=hud.gov&sz=128" alt="HUD"/><span style="display:none">HUD</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=sam.gov&sz=128" alt="SAM.gov"/><span style="display:none">SAM.gov</span></div>
-      <div class="partner-logo"><img src="https://www.google.com/s2/favicons?domain=bidnet.com&sz=128" alt="BidNet"/><span style="display:none">BidNet</span></div>
+      <div class="partner-item"><span class="partner-item-name">Fulton County</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Invest Atlanta</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Carroll Daniels</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Atlanta Housing</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Georgia DCA</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">LISC Atlanta</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">Baker Collins &amp; Co</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">HUD</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">SAM.gov</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><span class="partner-item-name">BidNet</span></div><div class="partner-dot"></div>
     </div>
   </div>
 </section>
