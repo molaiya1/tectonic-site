@@ -998,6 +998,9 @@
     -moz-appearance: none;
     appearance: none;
     border-radius: 0;
+    /* Remove browser spell-check/grammar zig-zag underlines */
+    text-decoration: none;
+    -webkit-text-decoration: none;
   }
   .field input::placeholder,
   .field textarea::placeholder { color: rgba(255,255,255,0.25); }
@@ -1837,7 +1840,7 @@
           <div class="form-grid">
             <div class="field">
               <label for="fname">Full Name *</label>
-              <input type="text" id="fname" name="name" placeholder="First &amp; Last Name" required/>
+              <input type="text" id="fname" name="name" placeholder="First &amp; Last Name" required spellcheck="false" autocomplete="name"/>
             </div>
             <div class="field">
               <label for="femail">Email Address *</label>
@@ -1847,11 +1850,11 @@
           <div class="form-grid">
             <div class="field">
               <label for="fphone">Phone</label>
-              <input type="tel" id="fphone" name="phone" placeholder="404-000-0000"/>
+              <input type="tel" id="fphone" name="phone" placeholder="404-000-0000" spellcheck="false" autocomplete="tel"/>
             </div>
             <div class="field">
               <label for="forg">Organization / Company</label>
-              <input type="text" id="forg" name="organization" placeholder="Company name"/>
+              <input type="text" id="forg" name="organization" placeholder="Company name" spellcheck="false" autocomplete="organization"/>
             </div>
           </div>
           <div class="form-grid">
