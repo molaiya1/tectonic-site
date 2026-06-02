@@ -103,7 +103,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    height: 82px;
+    height: 92px;
     background: rgba(11,13,15,0.97);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
@@ -118,27 +118,33 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
     text-decoration: none;
     flex-shrink: 0;
-    padding: 6px 0;
   }
-  .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.18;
+    /* Left border accent — ties mark to wordmark */
+    border-left: 1.5px solid rgba(212,160,23,0.35);
+    padding-left: 18px;
+  }
   .logo-name {
     font-family: var(--head);
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 24px;
+    font-weight: 900;
     text-transform: uppercase;
     color: var(--white);
     display: block;
     text-align: justify;
     text-align-last: justify;
     -moz-text-align-last: justify;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
   }
   .logo-sub {
     font-family: var(--head);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     color: var(--gold);
@@ -146,7 +152,7 @@
     text-align: justify;
     text-align-last: justify;
     -moz-text-align-last: justify;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
   }
   nav { display: flex; align-items: center; gap: 36px; }
   nav a {
@@ -936,7 +942,17 @@
     gap: 64px;
     margin-bottom: 52px;
   }
-  .ft-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; margin-bottom: 24px; padding: 4px 0; }
+  .ft-logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    margin-bottom: 28px;
+  }
+  .ft-logo .logo-text {
+    border-left: 1.5px solid rgba(212,160,23,0.30);
+    padding-left: 18px;
+  }
   .ft-tag { font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.7; }
   .ft-nav { display: flex; gap: 56px; }
   .ft-nav-title { font-family: var(--head); font-size: 8.5px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
@@ -1053,7 +1069,7 @@
   <div class="container">
     <div class="hdr">
       <a href="#" class="logo">
-        <img src="/assets/logo-mark.png" width="52" height="52" alt="Tectonic Developments mark" style="display:block;flex-shrink:0;"/>
+        <img src="/assets/logo-mark.png" width="68" height="68" alt="Tectonic Developments mark" style="display:block;flex-shrink:0;"/>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
           <span class="logo-sub">Developments™</span>
