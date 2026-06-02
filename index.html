@@ -995,6 +995,8 @@
     transition: border-color 0.2s, background 0.2s;
     width: 100%;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-radius: 0;
   }
   .field input::placeholder,
@@ -1005,7 +1007,23 @@
     border-color: var(--gold);
     background: rgba(212,160,23,0.04);
   }
-  .field select option { background: var(--charcoal); color: var(--white); }
+  /* Custom gold chevron arrow for all selects */
+  .field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4A017' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+    cursor: pointer;
+  }
+  .field select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 7l5-5 5 5' stroke='%23D4A017' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  .field select option {
+    background: #1A1F24;
+    color: var(--white);
+    padding: 10px 14px;
+  }
+  .field select option:disabled { color: rgba(255,255,255,0.30); }
   .field textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
   .form-actions {
     display: flex;
@@ -1819,7 +1837,7 @@
           <div class="form-grid">
             <div class="field">
               <label for="fname">Full Name *</label>
-              <input type="text" id="fname" name="name" placeholder="Michael Olaiya" required/>
+              <input type="text" id="fname" name="name" placeholder="First &amp; Last Name" required/>
             </div>
             <div class="field">
               <label for="femail">Email Address *</label>
