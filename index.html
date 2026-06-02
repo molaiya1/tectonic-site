@@ -934,34 +934,46 @@
     align-items: center;
     gap: 0;
     width: max-content;
-    animation: marquee-scroll 32s linear infinite;
+    animation: marquee-scroll 36s linear infinite;
   }
   .marquee-track:hover { animation-play-state: paused; }
   .partner-item {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    gap: 0;
+    padding: 0 36px;
+    height: 56px;
   }
-  .partner-item-name {
+  /* Logo image — converted to white, consistent across all brands */
+  .partner-item img {
+    max-height: 30px;
+    max-width: 110px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.30;
+    transition: opacity 0.2s;
+  }
+  .partner-item:hover img { opacity: 0.70; }
+  /* Text fallback for items without a logo */
+  .partner-item span {
     font-family: var(--head);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.32);
+    color: rgba(255,255,255,0.28);
     white-space: nowrap;
-    padding: 0 40px;
     transition: color 0.2s;
   }
-  .partner-item:hover .partner-item-name { color: rgba(255,255,255,0.65); }
-  /* Gold dot separator between items */
-  .partner-dot {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    border-radius: 50%;
-    opacity: 0.30;
+  .partner-item:hover span { color: rgba(255,255,255,0.60); }
+  /* Thin vertical divider between partners */
+  .partner-div {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,0.08);
     flex-shrink: 0;
   }
 
@@ -1776,28 +1788,28 @@
   <div class="partners-hd">Active Across Atlanta's Development Ecosystem &nbsp;·&nbsp; Registered on SAM.gov &amp; BidNet</div>
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <!-- Set A -->
-      <div class="partner-item"><span class="partner-item-name">Fulton County</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Invest Atlanta</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Carroll Daniels</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Atlanta Housing</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Georgia DCA</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">LISC Atlanta</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Baker Collins &amp; Co</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">HUD</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">SAM.gov</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">BidNet</span></div><div class="partner-dot"></div>
+      <!-- Set A — logos converted to white via CSS invert, consistent treatment -->
+      <div class="partner-item"><img src="/assets/partners/fulton-county.png" alt="Fulton County"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/invest-atlanta.png" alt="Invest Atlanta"/></div><div class="partner-div"></div>
+      <div class="partner-item"><span>Carroll Daniels</span></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/atlanta-housing.png" alt="Atlanta Housing"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/lisc.png" alt="LISC Atlanta"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/baker-collins.png" alt="Baker Collins &amp; Co"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/hud.png" alt="HUD"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/georgia-dca.svg" alt="Georgia DCA"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/sam-gov.png" alt="SAM.gov"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/bidnet.png" alt="BidNet"/></div><div class="partner-div"></div>
       <!-- Set B (duplicate for seamless loop) -->
-      <div class="partner-item"><span class="partner-item-name">Fulton County</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Invest Atlanta</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Carroll Daniels</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Atlanta Housing</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Georgia DCA</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">LISC Atlanta</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">Baker Collins &amp; Co</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">HUD</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">SAM.gov</span></div><div class="partner-dot"></div>
-      <div class="partner-item"><span class="partner-item-name">BidNet</span></div><div class="partner-dot"></div>
+      <div class="partner-item"><img src="/assets/partners/fulton-county.png" alt="Fulton County"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/invest-atlanta.png" alt="Invest Atlanta"/></div><div class="partner-div"></div>
+      <div class="partner-item"><span>Carroll Daniels</span></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/atlanta-housing.png" alt="Atlanta Housing"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/lisc.png" alt="LISC Atlanta"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/baker-collins.png" alt="Baker Collins &amp; Co"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/hud.png" alt="HUD"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/georgia-dca.svg" alt="Georgia DCA"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/sam-gov.png" alt="SAM.gov"/></div><div class="partner-div"></div>
+      <div class="partner-item"><img src="/assets/partners/bidnet.png" alt="BidNet"/></div><div class="partner-div"></div>
     </div>
   </div>
 </section>
