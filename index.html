@@ -1016,8 +1016,21 @@
     text-decoration: none;
     -webkit-text-decoration: none;
   }
-  /* Prevent Chrome autofill yellow override on selects */
-  .field select { color-scheme: dark; }
+  /* Suppress all native browser rendering artifacts on selects */
+  .field select {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-image: none;
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+  }
+  .field select:-webkit-autofill,
+  .field select:-webkit-autofill:hover,
+  .field select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #181c20 inset !important;
+    -webkit-text-fill-color: #fff !important;
+    box-shadow: 0 0 0 1000px #181c20 inset !important;
+  }
   .field input::placeholder,
   .field textarea::placeholder { color: rgba(255,255,255,0.25); }
   .field input:focus,
