@@ -1000,7 +1000,7 @@
   .field input,
   .field select,
   .field textarea {
-    background: rgba(255,255,255,0.04);
+    background: #181c20;
     border: 1px solid rgba(255,255,255,0.12);
     color: var(--white);
     font-family: var(--body);
@@ -1013,10 +1013,11 @@
     -moz-appearance: none;
     appearance: none;
     border-radius: 0;
-    /* Remove browser spell-check/grammar zig-zag underlines */
     text-decoration: none;
     -webkit-text-decoration: none;
   }
+  /* Prevent Chrome autofill yellow override on selects */
+  .field select { color-scheme: dark; }
   .field input::placeholder,
   .field textarea::placeholder { color: rgba(255,255,255,0.25); }
   .field input:focus,
@@ -1975,7 +1976,7 @@
           <div class="form-grid">
             <div class="field">
               <label for="ftype">I Am A...</label>
-              <select id="ftype" name="client_type">
+              <select id="ftype" name="client_type" autocomplete="off" spellcheck="false">
                 <option value="" disabled selected>Select your role</option>
                 <option>Government Agency / Municipality</option>
                 <option>Real Estate Investor</option>
@@ -1989,7 +1990,7 @@
             </div>
             <div class="field">
               <label for="fproject">Project Type</label>
-              <select id="fproject" name="project_type">
+              <select id="fproject" name="project_type" autocomplete="off" spellcheck="false">
                 <option value="" disabled selected>Select a project type</option>
                 <option>Residential Development / Renovation</option>
                 <option>Mixed-Use Development</option>
