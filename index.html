@@ -333,7 +333,26 @@
     padding: 96px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
+  /* Watermark — top right, partially cropped for a dynamic feel */
+  .mission::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 260px;
+    height: 260px;
+    background-image: url('/assets/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .mission-grid { position: relative; z-index: 1; }
   .mission-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -736,7 +755,27 @@
     background: var(--graphite);
     padding: 96px 0;
     border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
+  /* Watermark — large, centered, very faint */
+  .caps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    background-image: url('/assets/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .caps-hdr, .caps-grid { position: relative; z-index: 1; }
   .caps-hdr { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
   .caps-title {
     font-family: var(--head);
@@ -989,7 +1028,8 @@
     color: rgba(255,255,255,0.18);
     line-height: 1.7;
     margin-bottom: 10px;
-    max-width: 900px;
+    padding: 0 4px;
+    text-align: justify;
   }
   .ft-legal p:last-child { margin-bottom: 0; }
 
@@ -1493,11 +1533,7 @@
     <div class="ft-grid">
       <div class="ft-brand">
         <a href="#" class="ft-logo">
-          <svg width="30" height="30" viewBox="0 0 42 42" fill="none">
-            <path d="M24 3L38 13V21L30 17V11L24 7.5L18 11V17L10 21V13L24 3Z" fill="#D4A017"/>
-            <path d="M24 3L10 13V21L18 17V29L24 33L30 29V17L38 21V13Z" fill="#D4A017" opacity="0.48"/>
-            <polygon points="24,10 31,15 31,23 24,27 17,23 17,15" fill="#0B0D0F"/>
-          </svg>
+          <img src="/assets/logo-mark.png" width="60" height="60" alt="Tectonic Developments mark" style="display:block;flex-shrink:0;"/>
           <div class="logo-text">
             <span class="logo-name">Tectonic</span>
             <span class="logo-sub">Developments™</span>
