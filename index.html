@@ -118,41 +118,6 @@
     justify-content: space-between;
     height: 100%;
   }
-  /* ── LOGO ANIMATION ── */
-  .logo-mark-wrap {
-    position: relative;
-    width: 68px;
-    height: 68px;
-    flex-shrink: 0;
-    overflow: visible;
-  }
-  .logo-piece {
-    position: absolute;
-    top: 0; left: 0;
-    display: block;
-    pointer-events: none;
-  }
-  /* 3×3 grid — clip each piece to its cell */
-  .lp1 { clip-path: inset(0     66.6% 66.6% 0    ); animation: lp-tl 1.6s cubic-bezier(0.25,0.46,0.45,0.94) 0.10s both; }
-  .lp2 { clip-path: inset(0     33.3% 66.6% 33.3%); animation: lp-tc 3.2s cubic-bezier(0.22,0.61,0.36,1)    0.55s both; }
-  .lp3 { clip-path: inset(0     0     66.6% 66.6%); animation: lp-tr 2.0s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s both; }
-  .lp4 { clip-path: inset(33.3% 66.6% 33.3% 0    ); animation: lp-ml 2.8s cubic-bezier(0.22,0.61,0.36,1)    0.15s both; }
-  .lp5 { clip-path: inset(33.3% 33.3% 33.3% 33.3%); animation: lp-mc 3.8s cubic-bezier(0.22,0.61,0.36,1)    0.70s both; }
-  .lp6 { clip-path: inset(33.3% 0     33.3% 66.6%); animation: lp-mr 1.5s cubic-bezier(0.25,0.46,0.45,0.94) 0.80s both; }
-  .lp7 { clip-path: inset(66.6% 66.6% 0     0    ); animation: lp-bl 2.4s cubic-bezier(0.22,0.61,0.36,1)    0.35s both; }
-  .lp8 { clip-path: inset(66.6% 33.3% 0     33.3%); animation: lp-bc 1.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.05s both; }
-  .lp9 { clip-path: inset(66.6% 0     0     66.6%); animation: lp-br 3.4s cubic-bezier(0.22,0.61,0.36,1)    0.45s both; }
-
-  @keyframes lp-tl { from { transform: translate(-16px,-14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-tc { from { transform: translateY(-14px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-tr { from { transform: translate( 16px,-14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-ml { from { transform: translateX(-16px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-mc { from { transform: scale(0.88);            opacity: 0.3; } to { transform: scale(1);       opacity: 1; } }
-  @keyframes lp-mr { from { transform: translateX( 16px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-bl { from { transform: translate(-16px, 14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-bc { from { transform: translateY( 14px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes lp-br { from { transform: translate( 16px, 14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
-
   .logo {
     display: flex;
     align-items: center;
@@ -1412,17 +1377,7 @@
   <div class="container">
     <div class="hdr">
       <a href="#" class="logo">
-        <div class="logo-mark-wrap">
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp1" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp2" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp3" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp4" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp5" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp6" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp7" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp8" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp9" alt="Tectonic Developments mark"/>
-        </div>
+        <img src="/assets/logo-mark.png" width="68" height="68" alt="Tectonic Developments mark" style="display:block;flex-shrink:0;"/>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
           <span class="logo-sub">Developments™</span>
