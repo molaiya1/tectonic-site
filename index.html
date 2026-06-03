@@ -126,20 +126,32 @@
     flex-shrink: 0;
     overflow: visible;
   }
-  .logo-quarter {
+  .logo-piece {
     position: absolute;
     top: 0; left: 0;
     display: block;
     pointer-events: none;
   }
-  .logo-tl { clip-path: inset(0 50% 50% 0);   animation: logo-tl 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s  both; }
-  .logo-br { clip-path: inset(50% 0 0 50%);    animation: logo-br 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s both; }
-  .logo-tr { clip-path: inset(0 0 50% 50%);    animation: logo-tr 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.85s both; }
-  .logo-bl { clip-path: inset(50% 50% 0 0);    animation: logo-bl 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.15s both; }
-  @keyframes logo-tl { from { transform: translate(-16px, -14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes logo-tr { from { transform: translate( 16px, -14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes logo-bl { from { transform: translate(-16px,  14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
-  @keyframes logo-br { from { transform: translate( 16px,  14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
+  /* 3×3 grid — clip each piece to its cell */
+  .lp1 { clip-path: inset(0     66.6% 66.6% 0    ); animation: lp-tl 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.15s both; }
+  .lp2 { clip-path: inset(0     33.3% 66.6% 33.3%); animation: lp-tc 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.70s both; }
+  .lp3 { clip-path: inset(0     0     66.6% 66.6%); animation: lp-tr 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.40s both; }
+  .lp4 { clip-path: inset(33.3% 66.6% 33.3% 0    ); animation: lp-ml 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s both; }
+  .lp5 { clip-path: inset(33.3% 33.3% 33.3% 33.3%); animation: lp-mc 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 1.00s both; }
+  .lp6 { clip-path: inset(33.3% 0     33.3% 66.6%); animation: lp-mr 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.80s both; }
+  .lp7 { clip-path: inset(66.6% 66.6% 0     0    ); animation: lp-bl 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.55s both; }
+  .lp8 { clip-path: inset(66.6% 33.3% 0     33.3%); animation: lp-bc 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.45s both; }
+  .lp9 { clip-path: inset(66.6% 0     0     66.6%); animation: lp-br 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s both; }
+
+  @keyframes lp-tl { from { transform: translate(-16px,-14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-tc { from { transform: translateY(-14px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-tr { from { transform: translate( 16px,-14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-ml { from { transform: translateX(-16px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-mc { from { transform: scale(0.88);            opacity: 0.3; } to { transform: scale(1);       opacity: 1; } }
+  @keyframes lp-mr { from { transform: translateX( 16px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-bl { from { transform: translate(-16px, 14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-bc { from { transform: translateY( 14px);      opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes lp-br { from { transform: translate( 16px, 14px); opacity: 0.3; } to { transform: translate(0,0); opacity: 1; } }
 
   .logo {
     display: flex;
@@ -1401,10 +1413,15 @@
     <div class="hdr">
       <a href="#" class="logo">
         <div class="logo-mark-wrap">
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-tl" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-tr" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-bl" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-br" alt="Tectonic Developments mark"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp1" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp2" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp3" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp4" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp5" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp6" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp7" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp8" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-piece lp9" alt="Tectonic Developments mark"/>
         </div>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
