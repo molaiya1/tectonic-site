@@ -126,28 +126,20 @@
     flex-shrink: 0;
     overflow: visible;
   }
-  .logo-half {
+  .logo-quarter {
     position: absolute;
     top: 0; left: 0;
     display: block;
     pointer-events: none;
   }
-  .logo-left {
-    clip-path: inset(0 50% 0 0);
-    animation: logo-in-left 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
-  }
-  .logo-right {
-    clip-path: inset(0 0 0 50%);
-    animation: logo-in-right 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
-  }
-  @keyframes logo-in-left {
-    from { transform: translateX(-18px); opacity: 0.4; }
-    to   { transform: translateX(0);     opacity: 1; }
-  }
-  @keyframes logo-in-right {
-    from { transform: translateX(18px);  opacity: 0.4; }
-    to   { transform: translateX(0);     opacity: 1; }
-  }
+  .logo-tl { clip-path: inset(0 50% 50% 0);   animation: logo-tl 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both; }
+  .logo-tr { clip-path: inset(0 0 50% 50%);    animation: logo-tr 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both; }
+  .logo-bl { clip-path: inset(50% 50% 0 0);    animation: logo-bl 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both; }
+  .logo-br { clip-path: inset(50% 0 0 50%);    animation: logo-br 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both; }
+  @keyframes logo-tl { from { transform: translate(-16px, -14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes logo-tr { from { transform: translate( 16px, -14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes logo-bl { from { transform: translate(-16px,  14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
+  @keyframes logo-br { from { transform: translate( 16px,  14px); opacity: 0.4; } to { transform: translate(0,0); opacity: 1; } }
 
   .logo {
     display: flex;
@@ -1409,8 +1401,10 @@
     <div class="hdr">
       <a href="#" class="logo">
         <div class="logo-mark-wrap">
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-half logo-left" alt="" aria-hidden="true"/>
-          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-half logo-right" alt="Tectonic Developments mark"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-tl" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-tr" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-bl" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-quarter logo-br" alt="Tectonic Developments mark"/>
         </div>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
