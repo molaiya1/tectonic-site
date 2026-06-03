@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tectonicdevelopments.com/sitemap.xml
