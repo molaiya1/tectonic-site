@@ -118,6 +118,37 @@
     justify-content: space-between;
     height: 100%;
   }
+  /* ── LOGO ANIMATION ── */
+  .logo-mark-wrap {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+  .logo-half {
+    position: absolute;
+    top: 0; left: 0;
+    display: block;
+    pointer-events: none;
+  }
+  .logo-left {
+    clip-path: inset(0 50% 0 0);
+    animation: logo-in-left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+  }
+  .logo-right {
+    clip-path: inset(0 0 0 50%);
+    animation: logo-in-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+  }
+  @keyframes logo-in-left {
+    from { transform: translateX(-18px); opacity: 0.4; }
+    to   { transform: translateX(0);     opacity: 1; }
+  }
+  @keyframes logo-in-right {
+    from { transform: translateX(18px);  opacity: 0.4; }
+    to   { transform: translateX(0);     opacity: 1; }
+  }
+
   .logo {
     display: flex;
     align-items: center;
@@ -1377,7 +1408,10 @@
   <div class="container">
     <div class="hdr">
       <a href="#" class="logo">
-        <img src="/assets/logo-mark.png" width="68" height="68" alt="Tectonic Developments mark" style="display:block;flex-shrink:0;"/>
+        <div class="logo-mark-wrap">
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-half logo-left" alt="" aria-hidden="true"/>
+          <img src="/assets/logo-mark.png" width="68" height="68" class="logo-half logo-right" alt="Tectonic Developments mark"/>
+        </div>
         <div class="logo-text">
           <span class="logo-name">Tectonic</span>
           <span class="logo-sub">Developments™</span>
